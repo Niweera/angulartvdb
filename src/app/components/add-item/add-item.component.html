@@ -1,0 +1,53 @@
+<div class="jumbotron bg-dark pt-3 pb-1">
+  <form (ngSubmit)="onSubmit()">
+    <div class="row form-group">
+      <div class="col-md-2">
+        <input type="number" class="form-control" placeholder="TVID ({{lastTvid + 1}})" [(ngModel)]="item.tvid" name="tvid">
+      </div>
+      <div class="col-md-7">
+        <input type="text" class="form-control" placeholder="TVName" [(ngModel)]="item.tvname" name="tvname">
+      </div>
+      <div class="col-md-3">
+        <select class="form-control" [(ngModel)]="item.showtype" name="showtype">
+          <option value="" selected disabled>Select ShowType</option>
+          <option value='Completed'>Completed</option>
+          <option value='Airing'>Airing</option>
+          <option value='Break'>Break</option>
+        </select>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Wikipedia Link" [(ngModel)]="item.link" name="link">
+      </div>
+      <div class="col-md-2">
+        <select class="form-control" [(ngModel)]="item.pid" name="pid">
+            <option value="" selected disabled>Select Place</option>
+            <option value='b1'>b1</option>
+            <option value='b2'>b2</option>
+            <option value='b3'>b3</option>
+            <option value='b4'>b4</option>
+            <option value='b5'>b5</option>
+            <option value='l'>l</option>
+            <option value='p'>p</option>
+          </select>
+      </div>
+      <div class="col-md-2">
+        <input type="text" class="form-control" placeholder="TVFrom" [(ngModel)]="item.tvfrom" name="tvfrom">
+      </div>
+      <div class="col-md-2">
+        <input type="text" class="form-control" placeholder="TVTo" [(ngModel)]="item.tvto" name="tvto">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2">
+          <input type="submit" value="Submit" class="btn btn-success">
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-2"><label class="form-control">Last TVID</label></div>
+      <div class="col-md-2">
+        <input type="text" class="form-control" placeholder="Last TVID" value="{{lastTvid}}" name="lasttvid" disabled>
+      </div>
+    </div>
+  </form>
+</div>
