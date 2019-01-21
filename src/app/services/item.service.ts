@@ -17,7 +17,8 @@ export class ItemService {
   }
 
   getItems (startObj, endObj) {
-    this.itemsCollection = this.afs.collection<Item>('tvdb', ref => ref.orderBy('tvname').startAt(startObj).endAt(endObj+'\uf8ff'));
+    // this.itemsCollection = this.afs.collection<Item>('tvdb', ref => ref.orderBy('tvname').startAt(startObj).endAt(endObj+'\uf8ff'));
+    this.itemsCollection = this.afs.collection<Item>('tvdb', ref => ref.orderBy('tvid'));
     this.items = this.itemsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Item;
